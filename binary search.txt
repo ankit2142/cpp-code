@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+int binarysearch(int a[],int left,int right,int x)
+{
+	while(left<=right)
+	{
+	int mid=left+(right-left)/2;
+	if(a[mid]==x)
+	 {
+	 	return mid;
+	 }
+	 else if(a[mid]<x)
+	  left=mid+1;
+	  
+	  else
+	  {
+	  	 right=mid-1;
+	  }
+	  
+     }
+	 
+	  return -1;
+}
+
+int main()
+{
+	int n,r,i,x;
+	int output;
+	cin>>n>>x;
+	int a[n];
+	for(i=0;i<n;i++)
+	 cin>>a[i];
+	output=binarysearch(a,0,n-1,x);
+	if(output==-1)
+	 cout<<"No match found"<<endl;
+	 
+	 else
+	   cout<<"position of found element= "<<output<<endl;
+    	
+	
+}
+
+
+
+
+
+
+
+
